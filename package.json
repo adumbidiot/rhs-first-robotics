@@ -1,0 +1,35 @@
+{
+  "name": "rhs-first-robotics",
+  "version": "1.0.0",
+  "description": "rhs robtics server",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adumbidiot/rhs-first-robotics.git"
+  },
+  "keywords": [
+    "docker",
+    "node",
+    "server"
+  ],
+  "author": "nano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adumbidiot/rhs-first-robotics/issues"
+  },
+  "homepage": "https://github.com/adumbidiot/rhs-first-robotics#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "express-handlebars":"^3.0.0",
+    "request":"^2.81.0",
+    "body-parser": "^1.17.1",
+    "uws": "^0.14.1",
+    "jsonwebtoken": "^7.4.0",
+    "cookie-parser": "^1.4.3",
+    "mongodb": "^2.2.26",
+    "through2": "^2.0.3"
+  }
+}
