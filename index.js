@@ -7,7 +7,7 @@ app.use(function(req, res, next){
 });
 
 app.get('/', function(req, res){
-  res.send('idontknow');
+  res.sendFile(__dirname + '/index.html');
 });
 
 app.listen('8080');
