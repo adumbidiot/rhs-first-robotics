@@ -3,6 +3,7 @@ const handlebars = require('./handlebars.js');
 const config = require('./config.js');
 const app = express();
 const PORT = config.PORT;
+const DEV = config.DEV;
 
 handlebars.attach([app]);
 
@@ -11,8 +12,20 @@ app.use(function(req, res, next){
   next();
 });
 
+app.use(function(req, res, next){
+    if(req.protocol === 'http' && DEV === false){
+        res.redirect('https://www.rhs-first-robotics.ml' + req.path);
+    }else{
+        next();
+    }    
+});
+
 app.get('/', function(req, res){
-  res.render('home');
+  res.render('home', {home: true});
+});
+
+app.use(function(req, res){
+    res.render('404');
 });
 
 app.listen(PORT, function(){
