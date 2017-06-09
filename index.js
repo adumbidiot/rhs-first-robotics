@@ -24,6 +24,10 @@ app.get('/', function(req, res){
   res.render('home', {home: true});
 });
 
+app.get('/favicon.ico', function(req, res){
+    res.sendFile(__dirname + '/public/favicon.ico');
+});
+
 app.use(function(req, res){
     res.render('404');
 });
