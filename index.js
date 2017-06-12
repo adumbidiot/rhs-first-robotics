@@ -8,8 +8,10 @@ const DEV = config.DEV;
 handlebars.attach([app]);
 
 app.use(function(req, res, next){
-  console.log('Path: ' + req.path);
-  next();
+    console.log('\n');
+    console.log('Time: ' + new Date());
+    console.log('Path: ' + req.path);
+    next();
 });
 
 app.use(function(req, res, next){
@@ -19,6 +21,8 @@ app.use(function(req, res, next){
         next();
     }    
 });
+
+app.use('/img', express.static('public/img')); 
 
 app.get('/', function(req, res){
   res.render('home', {home: true});
